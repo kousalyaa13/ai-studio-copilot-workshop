@@ -22,19 +22,19 @@ class DataCleaner:
 
     def drop_missing(self):
         # Drop rows with any missing values, updating self.df in place.
-        pass
+        return self.df.dropna(inplace=True)
 
     def drop_duplicate_rows(self):
         # Remove duplicate rows, updating self.df in place.
-        pass
+        return self.df.drop_duplicates(inplace=True)
 
     def summary(self):
         # Return summary statistics for the DataFrame.
-        pass
+        return self.df.describe()
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("sample_data.csv")  
+    df = pd.read_csv("exercises/sample_data.csv")  
     cleaner = DataCleaner(df)  
     cleaner.drop_missing()
     cleaner.drop_duplicate_rows()
